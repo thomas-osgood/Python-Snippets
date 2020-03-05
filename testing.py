@@ -2,6 +2,7 @@
 
 import time
 import interesting_number
+import is_alphanumeric_only
 import missing_letter
 import move_zeros
 import pig_latin
@@ -20,6 +21,7 @@ def main():
     res = -1
     missing = None
     zeros_end = None
+    s_list = ["abtVNmkl135KJb", "_stbb@3nkLKH", "AABcmtvw2356"]
 
     # Missing Letter Test
     print("--- Missing Letter Test ---\n")
@@ -53,11 +55,23 @@ def main():
         res = interesting_number.is_interesting(number, awesome_numbers)
 
         if (res == 2):
-            print("[+] {0} Is An Interesting Number\n".format(number))
+            print("[+] {0} Is An Interesting Number".format(number))
         elif (res == 1):
-            print("[!] {0} Is Within Two Miles From An Interesting Number\n".format(number))
+            print("[!] {0} Is Within Two Miles From An Interesting Number".format(number))
         else:
-            print("[-] {0} Is Not An Interesting Number\n".format(number))
+            print("[-] {0} Is Not An Interesting Number".format(number))
+
+    print("")
+    
+    # Alphanumeric Only Test
+    print("--- Alphanumeric Only Test ---\n")
+    for s in s_list:
+        if (is_alphanumeric_only.alphanumeric(s)):
+            print("[+] {0} is an alphanumeric only string".format(s))
+        else:
+            print("[-] {0} is not an alphanumeric only string".format(s))
+
+    print("")
 
     return
 
