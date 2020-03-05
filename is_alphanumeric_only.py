@@ -7,7 +7,7 @@ def alphanumeric(password):
     special characters allowed.
     """
     retVal = False
-    pattern = re.compile("^[a-zA-Z0-9]+$".format(len(password)))
+    pattern = re.compile("^[a-zA-Z0-9]+$")
     if not(pattern.match(password) is None):
         retVal = True
     
